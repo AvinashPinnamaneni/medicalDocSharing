@@ -1,0 +1,129 @@
+.block {
+  display: block;
+  width: 100%;
+  border: none;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+  height: 10rem;
+}
+
+a {
+  color: black;
+}
+
+.patient{
+background-color: #A8DF8E;
+}
+
+.doctor{
+background-color: #CAEDFF;
+}
+
+.center{
+  background-color: #D67BFF;
+}
+
+
+
+/*-----------------Prescriptions page ----------------- */
+.dot {
+  display: inline-block;
+  border-radius: 50%;
+  margin: 0 auto;
+  background-color: #007BFF;
+}
+
+.small-dot {
+  width: 10px;
+  height: 10px;
+}
+
+.medium-dot {
+  width: 15px;
+  height: 15px;
+}
+
+.large-dot {
+  width: 20px;
+  height: 20px;
+}
+
+.navigation {
+  text-align: center;
+  margin: 10px 0;
+}
+
+/*-----------------Payment failed page ----------------- */
+.payment-failed{
+  margin: 10rem auto 8rem auto;
+}
+
+/*-----------------Payment page ----------------- */
+.payment-form {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 30px;
+    border: 1px solid #eee;
+    border-radius: 5px;
+}
+
+.main-body{
+  margin: 10rem auto 8rem auto;
+}
+
+
+/*------------------ Custom Styles Welcome page--------------*/
+.hero-section {
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #E4E4D0;
+}
+
+.barcode-section .h3 {
+  margin-bottom: 20px;
+}
+
+.content .btn {
+  background-color: #7EAA92;
+  border-color: inherit;
+}
+
+/*------------------ Nav bar and footer sections-----------*/
+.footer {
+  background-color: #C8E4B2;
+  padding: 20px 0;
+}
+
+.footer-mail {
+  margin-right: 10px;
+}
+
+.navbar-brand img {
+  height: 40px;
+}
+
+.navbar {
+  transition: all 0.5s ease-in-out;
+  background-color: #ADE792;
+}
+
+.navbar .nav-link {
+  color: black;
+}
+
+.navbar-scroll {
+  transition: all 0.6s ease-in-out;
+  position: fixed;
+  top: -70px;
+  background-color: #ADE792;
+  width: 100%;
+  z-index: 1000;
+}
+
+.navbar-scroll .navbar-brand img {
+  height: 25px; /* Reduce the size of the logo on scrolling */
+}

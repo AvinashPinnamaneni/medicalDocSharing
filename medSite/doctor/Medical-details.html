@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Record Details - Patient Portal</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Medical Details Card -->
+    <div class="card">
+        <div class="card-header">
+            Medical Record Details
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Diagnosis: Common Cold</h5>
+            <p class="card-text">
+                <strong>Date:</strong> 20 Aug 2023<br>
+                <strong>Doctor:</strong> Dr. John Doe<br>
+                <strong>Prescription:</strong> Paracetamol, Cough Syrup<br>
+                <strong>Additional Notes:</strong> Advised rest and hydration.<br>
+            </p>
+
+            <!-- Diagnostic Reports Link -->
+            <div class="mt-4">
+                <strong>Diagnostic Reports:</strong><br>
+                <a href="path_to_report_visualization.html" target="_blank">View X-ray Report</a>
+                <!-- You can add more links for other reports, just ensure you have the page or tool to visualize the report at the given link. -->
+            </div>
+
+        </div>
+        <div class="card-footer text-right">
+            <button class="btn btn-secondary" onclick="closeDetails()">Close</button>
+        </div>
+    </div>
+
+    <!-- JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // Function to close the medical details (useful if it's a modal)
+        function closeDetails() {
+            // If you're using Bootstrap's modal component:
+            // $('#medicalDetailsModal').modal('hide');
+
+            // If you're just closing the window or navigating back:
+            window.close();
+        }
+    </script>
+
+</body>
+
+</html>

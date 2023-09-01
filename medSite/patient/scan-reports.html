@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scan reports viewer</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="E:\Startup\Digital doc sharing\medSite\stylesMain.CSS">
+  <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.0/dist/JsBarcode.all.min.js"></script>
+
+</head>
+
+<body>
+
+  <!-- Navbar Section -->
+  <nav class="navbar navbar-expand-lg fixed-top" id="navbar">
+    <!-- Logo on the right -->
+    <a class="navbar-brand ml-auto" href="E:\Startup\Digital doc sharing\medSite\index.html">
+      <img src="E:\Startup\Digital doc sharing\medSite\patient\Images\logo.png" alt="Med Digi Doc">
+    </a>
+    <!-- Navbar Links -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle " href="E:\Startup\Digital doc sharing\medSite\patient\my-account.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            My Account
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="E:\Startup\Digital doc sharing\medSite\patient\my-account.html">Personal Information</a>
+            <a class="dropdown-item" href="E:\Startup\Digital doc sharing\medSite\patient\contact-details.html">Contact Details</a>
+            <a class="dropdown-item" href="E:\Startup\Digital doc sharing\medSite\patient\medical-history.html">Medical History</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="E:\Startup\Digital doc sharing\medSite\patient\privacy-options.html">Privacy Options</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="E:\Startup\Digital doc sharing\medSite\patient\appointment-management.html">My Appointments</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="E:\Startup\Digital doc sharing\medSite\About us.html">About us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="E:\Startup\Digital doc sharing\medSite\Contact us.html">Contact us</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+
+  <div style="margin: 6rem 0">
+    <div class="container mt-5">
+      <div class="row">
+        <!-- Scan Docs List -->
+        <div class="col-md-3">
+          <h4>Scan Documents</h4>
+          <ul class="list-group">
+            <li class="list-group-item"><a href="#" data-doc-src="path-to-doc1.jpg" data-doc-details="Uploaded: 01 Jan 2023, Type: MRI">Document 1</a></li>
+            <li class="list-group-item"><a href="#" data-doc-src="path-to-doc2.jpg" data-doc-details="Uploaded: 05 Feb 2023, Type: X-Ray">Document 2</a></li>
+            <!-- ... more documents ... -->
+          </ul>
+        </div>
+
+        <!-- Document Viewer -->
+        <div class="col-md-6">
+          <h4>Document Viewer</h4>
+          <img id="docViewer" src=https://www.spineinfo.com/wp-content/uploads/2023/02/shutterstock_283708769-scaled.jpg alt="Document" class="img-fluid">
+
+
+          <!-- Document Details -->
+          <div>
+            <h4>Document Details</h4>
+            <p id="docDetails">Select a document to view its details.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- footer section -->
+  <div class="footer">
+    <div class="container ">
+      <footer class="py-5">
+        <div class="row">
+          <div class="col-6 col-md-2 mb-3">
+            <h5>Section</h5>
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pricing</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
+            </ul>
+          </div>
+
+          <div class="col-6 col-md-2 mb-3">
+            <h5>Section</h5>
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pricing</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
+            </ul>
+          </div>
+
+          <div class="col-6 col-md-2 mb-3">
+            <h5>Section</h5>
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pricing</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
+            </ul>
+          </div>
+
+          <div class="col-md-5 offset-md-1 mb-3">
+            <form>
+              <h5>Subscribe to our newsletter</h5>
+              <p>Monthly digest of what's new and exciting from us.</p>
+              <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+                <input id="newsletter1" type="text" class="form-control footer-mail" placeholder="Email address">
+                <button class="btn btn-primary" type="button">Subscribe</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+          <p>&copy; 2022 Company, Inc. All rights reserved.</p>
+          <ul class="list-unstyled d-flex">
+            <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24">
+                  <use xlink:href="#twitter" />
+                </svg></a></li>
+            <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24">
+                  <use xlink:href="#instagram" />
+                </svg></a></li>
+            <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24">
+                  <use xlink:href="#facebook" />
+                </svg></a></li>
+          </ul>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <script>
+    // On clicking a document link, display that document and its details
+    $('a[data-doc-src]').click(function(e) {
+      e.preventDefault();
+      const docSrc = $(this).attr('data-doc-src');
+      const docDetails = $(this).attr('data-doc-details');
+      $('#docViewer').attr('src', docSrc);
+      $('#docDetails').text(docDetails);
+    });
+  </script>
+  <script src="E:\Startup\Digital doc sharing\medSite\patient\index.js" charset="utf-8"></script>
+</body>
+
+</html>

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Medical Recordws history- Patient portal</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- FullCalendar CSS -->
+  <link href='https://fullcalendar.io/releases/fullcalendar/4.0.2/fullcalendar.min.css' rel='stylesheet' />
+  <link rel="stylesheet" href="E:\Startup\Digital doc sharing\medSite\stylesMain.CSS">
+
+  <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.0/dist/JsBarcode.all.min.js"></script>
+
+</head>
+
+<body>
+
+  <!-- Navbar Section -->
+  <nav class="navbar navbar-expand-lg fixed-top" id="navbar">
+    <!-- Logo on the right -->
+    <a class="navbar-brand ml-auto" href="E:\Startup\Digital doc sharing\medSite\index.html">
+      <img src="E:\Startup\Digital doc sharing\medSite\patient\Images\logo.png" alt="Med Digi Doc">
+    </a>
+    <!-- Navbar Links -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle " href="E:\Startup\Digital doc sharing\medSite\patient\my-account.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            My Account
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="E:\Startup\Digital doc sharing\medSite\patient\my-account.html">Personal Information</a>
+            <a class="dropdown-item" href="E:\Startup\Digital doc sharing\medSite\patient\contact-details.html">Contact Details</a>
+            <a class="dropdown-item" href="E:\Startup\Digital doc sharing\medSite\patient\medical-history.html">Medical History</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="E:\Startup\Digital doc sharing\medSite\patient\privacy-options.html">Privacy Options</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="E:\Startup\Digital doc sharing\medSite\patient\appointment-management.html">My Appointments</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="E:\Startup\Digital doc sharing\medSite\About us.html">About us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="E:\Startup\Digital doc sharing\medSite\Contact us.html">Contact us</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+
+<div class="container mt-5">
+  <div class="container main-body">
+    <!-- Medical History Section -->
+    <div class="container table-container">
+      <h2>Medical Records History</h2>
+
+      <!-- Search Bar -->
+      <div class="search-bar">
+        <input type="text" class="form-control" placeholder="Search medical records...">
+      </div>
+
+      <!-- Medical History Table -->
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Diagnosis</th>
+            <th>Prescription</th>
+            <th>Doctor</th>
+            <th>Additional Notes</th>
+            <th>Details</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Sample Data (Should be replaced by dynamic data from a backend/database) -->
+          <tr>
+            <td>20 Aug 2023</td>
+            <td>Common Cold</td>
+            <td>Paracetamol, Cough Syrup</td>
+            <td>Dr. John Doe</td>
+            <td>Advised rest and hydration</td>
+            <td><a href=file:///E:/Startup/Digital%20doc%20sharing/medSite/patient/Medical-details.html class="btn btn-info btn-sm">View</a></td>
+          </tr>
+          <tr>
+            <td>15 Jul 2023</td>
+            <td>Fracture (Left Arm)</td>
+            <td>Analgesics, Calcium Supplements</td>
+            <td>Dr. Jane Smith</td>
+            <td>Advised wearing a cast for 6 weeks</td>
+            <td><a href=file:///E:/Startup/Digital%20doc%20sharing/medSite/patient/Medical-details.html class="btn btn-info btn-sm">View</a></td>
+          </tr>
+          <!-- ... Add more rows as needed ... -->
+        </tbody>
+      </table>
+
+      <!-- Pagination -->
+      <nav aria-label="Page navigation">
+        <ul class="pagination">
+          <li class="page-item"><a class="page-link" href=file:///E:/Startup/Digital%20doc%20sharing/medSite/patient/medical-history.html>Previous</a></li>
+          <li class="page-item"><a class="page-link" href="#">1</a></li>
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item"><a class="page-link" href="#">Next</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+</div>
+
+
+
+  <!-- footer section -->
+  <div class="footer">
+    <div class="container ">
+      <footer class="py-5">
+        <div class="row">
+          <div class="col-6 col-md-2 mb-3">
+            <h5>Section</h5>
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pricing</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
+            </ul>
+          </div>
+
+          <div class="col-6 col-md-2 mb-3">
+            <h5>Section</h5>
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pricing</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
+            </ul>
+          </div>
+
+          <div class="col-6 col-md-2 mb-3">
+            <h5>Section</h5>
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pricing</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
+            </ul>
+          </div>
+
+          <div class="col-md-5 offset-md-1 mb-3">
+            <form>
+              <h5>Subscribe to our newsletter</h5>
+              <p>Monthly digest of what's new and exciting from us.</p>
+              <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+                <input id="newsletter1" type="text" class="form-control footer-mail" placeholder="Email address">
+                <button class="btn btn-secondary" type="button">Subscribe</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+          <p>&copy; 2023 Company, Inc. All rights reserved.</p>
+          <ul class="list-unstyled d-flex">
+            <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24">
+                  <use xlink:href="bootstrap-icons.svg#twitter" /> <!-- Use the Bootstrap Icons SVG sprite and specify the icon name -->
+                </svg></a></li>
+            <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24">
+                  <use xlink:href="bootstrap-icons.svg#instagram" />
+                </svg></a></li>
+            <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24">
+                  <use xlink:href="bootstrap-icons.svg#facebook" />
+                </svg></a></li>
+          </ul>
+        </div>
+
+      </footer>
+    </div>
+  </div>
+
+  <!-- JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="E:\Startup\Digital doc sharing\medSite\patient\index.js" charset="utf-8"></script>
+</body>
+
+</html>

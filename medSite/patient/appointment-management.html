@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Appointment Management</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- FullCalendar CSS -->
+  <link href='https://fullcalendar.io/releases/fullcalendar/4.0.2/fullcalendar.min.css' rel='stylesheet' />
+  <link rel="stylesheet" href="E:\Startup\Digital doc sharing\medSite\stylesMain.CSS">
+
+  <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.0/dist/JsBarcode.all.min.js"></script>
+
+</head>
+
+<body>
+  <!-- Navbar Section -->
+  <nav class="navbar navbar-expand-lg fixed-top" id="navbar">
+    <!-- Logo on the right -->
+    <a class="navbar-brand ml-auto" href="E:\Startup\Digital doc sharing\medSite\index.html">
+      <img src="E:\Startup\Digital doc sharing\medSite\patient\Images\logo.png" alt="Med Digi Doc">
+    </a>
+    <!-- Navbar Links -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle " href="E:\Startup\Digital doc sharing\medSite\patient\my-account.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            My Account
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="E:\Startup\Digital doc sharing\medSite\patient\my-account.html">Personal Information</a>
+            <a class="dropdown-item" href="E:\Startup\Digital doc sharing\medSite\patient\contact-details.html">Contact Details</a>
+            <a class="dropdown-item" href="E:\Startup\Digital doc sharing\medSite\patient\medical-history.html">Medical History</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="E:\Startup\Digital doc sharing\medSite\patient\privacy-options.html">Privacy Options</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="E:\Startup\Digital doc sharing\medSite\patient\appointment-management.html">My Appointments</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="E:\Startup\Digital doc sharing\medSite\About us.html">About us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="E:\Startup\Digital doc sharing\medSite\Contact us.html">Contact us</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container mt-5 ">
+    <div class="container main-body">
+      <h1 class="text-center mb-5">Appointment Management</h1>
+
+      <!-- New Appointment Button -->
+      <div class="text-center mb-4">
+        <a href="file:///E:/Startup/Digital%20doc%20sharing/medSite/patient/Appointment%20booking.html" class="btn btn-primary">Book a New Appointment</a>
+      </div>
+
+      <!-- Upcoming Appointments -->
+      <div class="card">
+        <div class="card-header">Upcoming Appointments</div>
+        <div class="card-body">
+          <table class="table">
+            <tbody id="upcomingAppointments">
+              <!-- Sample appointment -->
+              <tr>
+                <td>Dr. John Doe</td>
+                <td>25th August 2023, 10:00 AM</td>
+                <td>
+                  <a href="#" class="btn btn-sm btn-danger" onclick="cancelAppointment(this)">Cancel</a>
+                  <a href="#" class="btn btn-sm btn-warning" data-toggle="modal" data-target="#rescheduleModal">Reschedule</a>
+                </td>
+              </tr>
+              <!-- Add more appointment items as needed -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <br>
+
+      <!-- Past Appointments -->
+      <div class="card">
+        <div class="card-header">Past Appointments</div>
+        <div class="card-body">
+          <table class="table">
+            <tbody>
+              <!-- Sample past appointment -->
+              <tr>
+                <td>Dr. Jane Smith</td>
+                <td>5th August 2023, 2:00 PM</td>
+                <td>
+                  <button class="btn btn-sm btn-primary" onclick="viewPastAppointmentDetails(this)">View Details</button>
+                </td>
+              </tr>
+              <!-- Add more past appointment items as needed -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <!-- Reschedule Modal -->
+  <div class="modal fade" id="rescheduleModal" tabindex="-1" role="dialog" aria-labelledby="rescheduleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="rescheduleModalLabel">Reschedule Appointment</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+
+        <div class="modal-body">
+          <!-- Populate this form with the present appointment information -->
+          <form>
+            <form action="#" method="POST">
+              <!-- Replace '#' with your backend endpoint -->
+              <div class="form-group">
+                <label for="fullname">Full Name:</label>
+                <input type="text" class="form-control" id="fullname" name="fullname" required>
+              </div>
+              <div class="form-group">
+                <label for="email">Email Address:</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+              </div>
+              <div class="form-group">
+                <label for="phone">Contact Number:</label>
+                <input type="tel" class="form-control" id="phone" name="phone" required>
+              </div>
+              <div class="form-group">
+                <label for="dob">Date of Birth:</label>
+                <input type="date" class="form-control" id="dob" name="dob" required>
+              </div>
+              <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" class="form-control" id="password" name="password" required>
+              </div>
+              <div class="form-group">
+                <label for="confirmPassword">Confirm Password:</label>
+                <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" required>
+              </div>
+              <button type="submit" class="btn btn-primary" onclick="openConfirmationPage()">Create Account</button>
+            </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- footer section -->
+  <div class="footer">
+    <div class="container ">
+      <footer class="py-5">
+        <div class="row">
+          <div class="col-6 col-md-2 mb-3">
+            <h5>Section</h5>
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pricing</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
+            </ul>
+          </div>
+
+          <div class="col-6 col-md-2 mb-3">
+            <h5>Section</h5>
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pricing</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
+            </ul>
+          </div>
+
+          <div class="col-6 col-md-2 mb-3">
+            <h5>Section</h5>
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pricing</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
+            </ul>
+          </div>
+
+          <div class="col-md-5 offset-md-1 mb-3">
+            <form>
+              <h5>Subscribe to our newsletter</h5>
+              <p>Monthly digest of what's new and exciting from us.</p>
+              <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+                <input id="newsletter1" type="text" class="form-control footer-mail" placeholder="Email address">
+                <button class="btn btn-secondary" type="button">Subscribe</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+          <p>&copy; 2023 Company, Inc. All rights reserved.</p>
+          <ul class="list-unstyled d-flex">
+            <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24">
+                  <use xlink:href="bootstrap-icons.svg#twitter" /> <!-- Use the Bootstrap Icons SVG sprite and specify the icon name -->
+                </svg></a></li>
+            <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24">
+                  <use xlink:href="bootstrap-icons.svg#instagram" />
+                </svg></a></li>
+            <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24">
+                  <use xlink:href="bootstrap-icons.svg#facebook" />
+                </svg></a></li>
+          </ul>
+        </div>
+
+      </footer>
+    </div>
+  </div>
+  <!-- Optional: Add Bootstrap JS and other libraries if needed -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    function cancelAppointment(cancelButton) {
+      if (confirm('Are you sure you want to cancel this appointment?')) {
+        const listItem = cancelButton.closest('.list-group-item');
+        listItem.remove();
+        // Send a POST request to delete the appointment on the server
+        // You can use AJAX, Fetch, or any other method to send the request
+        // Example: fetch('/delete-appointment', { method: 'POST', body: JSON.stringify(appointmentData) })
+      }
+    }
+  </script>
+  <script src="E:\Startup\Digital doc sharing\medSite\patient\index.js" charset="utf-8"></script>
+</body>
+
+</html>

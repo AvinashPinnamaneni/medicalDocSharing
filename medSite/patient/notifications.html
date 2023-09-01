@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>chats and Notifications</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="E:\Startup\Digital doc sharing\medSite\stylesMain.CSS">
+  <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.0/dist/JsBarcode.all.min.js"></script>
+
+</head>
+
+<body>
+
+  <!-- Navbar Section -->
+  <nav class="navbar navbar-expand-lg fixed-top" id="navbar">
+    <!-- Logo on the right -->
+    <a class="navbar-brand ml-auto" href="E:\Startup\Digital doc sharing\medSite\index.html">
+      <img src="E:\Startup\Digital doc sharing\medSite\patient\Images\logo.png" alt="Med Digi Doc">
+    </a>
+    <!-- Navbar Links -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle " href="E:\Startup\Digital doc sharing\medSite\patient\my-account.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            My Account
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="E:\Startup\Digital doc sharing\medSite\patient\my-account.html">Personal Information</a>
+            <a class="dropdown-item" href="E:\Startup\Digital doc sharing\medSite\patient\contact-details.html">Contact Details</a>
+            <a class="dropdown-item" href="E:\Startup\Digital doc sharing\medSite\patient\medical-history.html">Medical History</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="E:\Startup\Digital doc sharing\medSite\patient\privacy-options.html">Privacy Options</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="E:\Startup\Digital doc sharing\medSite\patient\appointment-management.html">My Appointments</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="E:\Startup\Digital doc sharing\medSite\About us.html">About us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="E:\Startup\Digital doc sharing\medSite\Contact us.html">Contact us</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+
+    <!-- Main Content -->
+    <div class="container main-body" >
+      <div class="container mt-5">
+          <div class="row">
+
+              <!-- Contacts -->
+              <div class="col-md-3">
+                  <h4><img src="contact.png" alt="Contacts"> Contacts</h4>
+                  <ul class="list-group">
+                      <li class="list-group-item"><a href="#" class="contact-link" data-contact="Dr. Smith">Dr. Smith</a></li>
+                      <li class="list-group-item"><a href="#" class="contact-link" data-contact="Dr. Lee">Dr. Lee</a></li>
+                      <li class="list-group-item"><a href="#" class="contact-link" data-contact="Pharmacy">Pharmacy</a></li>
+                  </ul>
+                  <a href="#" class="btn btn-link mt-3">Link Contacts</a>
+              </div>
+
+              <!-- Chat Console -->
+              <div class="col-md-6">
+                  <h4><img src="chat.png" alt="Chat"> Chat</h4>
+                  <div class="card">
+                      <div class="card-header" id="chat-header">Select a contact to start a chat</div>
+                      <div class="card-body" style="height: 300px; overflow-y: scroll;" id="chat-content">
+                          <!-- Chat content will be dynamically populated here -->
+                      </div>
+                      <div class="card-footer">
+                          <input type="text" class="form-control" placeholder="Type your message...">
+                          <button class="btn btn-primary mt-2">Send</button>
+                      </div>
+                  </div>
+              </div>
+
+              <!-- Notifications -->
+              <div class="col-md-3">
+                  <h4><img src="notifications.png" alt="Notifications"> Notifications</h4>
+                  <ul class="list-group">
+                      <li class="list-group-item">Dr. Smith confirmed your appointment for 28th August.</li>
+                      <li class="list-group-item">Your prescription is ready for pick-up.</li>
+                      <li class="list-group-item">Reminder: Appointment with Dr. Lee on 30th August.</li>
+                  </ul>
+              </div>
+
+          </div>
+      </div>
+
+    </div>
+
+    <!-- Modal for Link Contacts -->
+    <div class="modal fade" id="linkContactsModal" tabindex="-1" role="dialog" aria-labelledby="linkContactsModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="linkContactsModalLabel">Link a New Contact</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form id="linkContactForm">
+              <div class="form-group">
+                <label for="contactName">Contact Name</label>
+                <input type="text" class="form-control" id="contactName" placeholder="Enter contact name">
+              </div>
+              <div class="form-group">
+                <label for="contactNumber">Contact Number</label>
+                <input type="text" class="form-control" id="contactNumber" placeholder="Enter contact number">
+              </div>
+              <!-- You can add more fields as needed -->
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" id="submitContact">Submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- footer section -->
+    <div class="footer">
+      <div class="container ">
+        <footer class="py-5">
+          <div class="row">
+            <div class="col-6 col-md-2 mb-3">
+              <h5>Section</h5>
+              <ul class="nav flex-column">
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pricing</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
+              </ul>
+            </div>
+
+            <div class="col-6 col-md-2 mb-3">
+              <h5>Section</h5>
+              <ul class="nav flex-column">
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pricing</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
+              </ul>
+            </div>
+
+            <div class="col-6 col-md-2 mb-3">
+              <h5>Section</h5>
+              <ul class="nav flex-column">
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pricing</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
+              </ul>
+            </div>
+
+            <div class="col-md-5 offset-md-1 mb-3">
+              <form>
+                <h5>Subscribe to our newsletter</h5>
+                <p>Monthly digest of what's new and exciting from us.</p>
+                <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+                  <input id="newsletter1" type="text" class="form-control footer-mail" placeholder="Email address">
+                  <button class="btn btn-primary" type="button">Subscribe</button>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+            <p>&copy; 2022 Company, Inc. All rights reserved.</p>
+            <ul class="list-unstyled d-flex">
+              <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24">
+                    <use xlink:href="#twitter" />
+                  </svg></a></li>
+              <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24">
+                    <use xlink:href="#instagram" />
+                  </svg></a></li>
+              <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24">
+                    <use xlink:href="#facebook" />
+                  </svg></a></li>
+            </ul>
+          </div>
+        </footer>
+      </div>
+    </div>
+
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Custom JS for dynamic chat loading -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        let contactLinks = document.querySelectorAll('.contact-link');
+
+        contactLinks.forEach(function(link) {
+          link.addEventListener('click', function(event) {
+            event.preventDefault();
+            let contactName = this.getAttribute('data-contact');
+            document.getElementById('chat-header').textContent = contactName;
+
+            // For the sake of this example, we'll just clear the chat content.
+            // In a real-world scenario, you'd probably fetch and display the chat history with this contact.
+            document.getElementById('chat-content').innerHTML = '';
+          });
+        });
+      });
+    </script>
+
+    <!-- Custom JS to handle the modal show event -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        // ... (existing JavaScript code)
+
+        // When the "Link Contacts" button is clicked, show the modal
+        let linkButton = document.querySelector('.btn-link');
+        let modal = new bootstrap.Modal(document.getElementById('linkContactsModal'));
+
+        linkButton.addEventListener('click', function(event) {
+          event.preventDefault();
+          modal.show();
+        });
+
+        // Handle the submit action here
+        let submitButton = document.getElementById('submitContact');
+        submitButton.addEventListener('click', function() {
+          let contactName = document.getElementById('contactName').value;
+          let contactNumber = document.getElementById('contactNumber').value;
+
+          // You can save this data to a server, local storage, or any other place.
+          // For now, we'll just console log it and close the modal
+          console.log('New contact:', contactName, contactNumber);
+          modal.hide();
+        });
+      });
+    </script>
+<script src="E:\Startup\Digital doc sharing\medSite\patient\index.js" charset="utf-8"></script>
+</body>
+
+</html>

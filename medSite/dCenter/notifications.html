@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chat & Notifications</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Patient Portal</a>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Home</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Chat & Notifications</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="container mt-5">
+    <div class="row">
+
+      <!-- Contacts -->
+      <div class="col-md-3">
+        <h4>Contacts</h4>
+        <ul class="list-group">
+          <li class="list-group-item"><a href="#" class="contact-link" data-contact="Dr. Smith">Dr. Smith</a></li>
+          <li class="list-group-item"><a href="#" class="contact-link" data-contact="Dr. Lee">Dr. Lee</a></li>
+          <li class="list-group-item"><a href="#" class="contact-link" data-contact="Pharmacy">Pharmacy</a></li>
+        </ul>
+        <a href="#" class="btn btn-link mt-3">Link Contacts</a>
+      </div>
+
+      <!-- Chat Console -->
+      <div class="col-md-6">
+        <h4>Chat</h4>
+        <div class="card">
+          <div class="card-header" id="chat-header">Select a contact to start a chat</div>
+          <div class="card-body" style="height: 300px; overflow-y: scroll;" id="chat-content">
+            <!-- Chat content will be dynamically populated here -->
+          </div>
+          <div class="card-footer">
+            <input type="text" class="form-control" placeholder="Type your message...">
+            <button class="btn btn-primary mt-2">Send</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Notifications -->
+      <div class="col-md-3">
+        <h4>Notifications</h4>
+        <ul class="list-group">
+          <li class="list-group-item">Dr. Smith confirmed your appointment for 28th August.</li>
+          <li class="list-group-item">Your prescription is ready for pick-up.</li>
+          <li class="list-group-item">Reminder: Appointment with Dr. Lee on 30th August.</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Modal for Link Contacts -->
+  <div class="modal fade" id="linkContactsModal" tabindex="-1" role="dialog" aria-labelledby="linkContactsModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="linkContactsModalLabel">Link a New Contact</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form id="linkContactForm">
+            <div class="form-group">
+              <label for="contactName">Contact Name</label>
+              <input type="text" class="form-control" id="contactName" placeholder="Enter contact name">
+            </div>
+            <div class="form-group">
+              <label for="contactNumber">Contact Number</label>
+              <input type="text" class="form-control" id="contactNumber" placeholder="Enter contact number">
+            </div>
+            <!-- You can add more fields as needed -->
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" id="submitContact">Submit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <!-- Custom JS for dynamic chat loading -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      let contactLinks = document.querySelectorAll('.contact-link');
+
+      contactLinks.forEach(function(link) {
+        link.addEventListener('click', function(event) {
+          event.preventDefault();
+          let contactName = this.getAttribute('data-contact');
+          document.getElementById('chat-header').textContent = contactName;
+
+          // For the sake of this example, we'll just clear the chat content.
+          // In a real-world scenario, you'd probably fetch and display the chat history with this contact.
+          document.getElementById('chat-content').innerHTML = '';
+        });
+      });
+    });
+  </script>
+
+  <!-- Custom JS to handle the modal show event -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // ... (existing JavaScript code)
+
+      // When the "Link Contacts" button is clicked, show the modal
+      let linkButton = document.querySelector('.btn-link');
+      let modal = new bootstrap.Modal(document.getElementById('linkContactsModal'));
+
+      linkButton.addEventListener('click', function(event) {
+        event.preventDefault();
+        modal.show();
+      });
+
+      // Handle the submit action here
+      let submitButton = document.getElementById('submitContact');
+      submitButton.addEventListener('click', function() {
+        let contactName = document.getElementById('contactName').value;
+        let contactNumber = document.getElementById('contactNumber').value;
+
+        // You can save this data to a server, local storage, or any other place.
+        // For now, we'll just console log it and close the modal
+        console.log('New contact:', contactName, contactNumber);
+        modal.hide();
+      });
+    });
+  </script>
+
+</body>
+
+</html>

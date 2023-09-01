@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WCreate an account</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- FullCalendar CSS -->
+  <link href='https://fullcalendar.io/releases/fullcalendar/4.0.2/fullcalendar.min.css' rel='stylesheet' />
+  <link rel="stylesheet" href="E:\Startup\Digital doc sharing\medSite\stylesMain.CSS">
+
+  <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.0/dist/JsBarcode.all.min.js"></script>
+
+</head>
+
+<body>
+
+  <!-- Navbar Section -->
+  <!-- Your navbar content here -->
+  <!-- Navbar Section -->
+  <nav class="navbar navbar-expand-lg fixed-top" id="navbar">
+    <!-- Logo on the right -->
+    <a class="navbar-brand ml-auto" href="E:\Startup\Digital doc sharing\medSite\index.html">
+      <img src="E:\Startup\Digital doc sharing\medSite\patient\Images\logo.png" alt="Med Digi Doc">
+    </a>
+    <!-- Navbar Links -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle " href="E:\Startup\Digital doc sharing\medSite\patient\my-account.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            My Account
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="E:\Startup\Digital doc sharing\medSite\patient\my-account.html">Personal Information</a>
+            <a class="dropdown-item" href="E:\Startup\Digital doc sharing\medSite\patient\contact-details.html">Contact Details</a>
+            <a class="dropdown-item" href="E:\Startup\Digital doc sharing\medSite\patient\medical-history.html">Medical History</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="E:\Startup\Digital doc sharing\medSite\patient\privacy-options.html">Privacy Options</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="E:\Startup\Digital doc sharing\medSite\patient\appointment-management.html">My Appointments</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="E:\Startup\Digital doc sharing\medSite\About us.html">About us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="E:\Startup\Digital doc sharing\medSite\Contact us.html">Contact us</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+
+  <!-- Account Creation Form -->
+  <div class="container main-body">
+    <!-- Need to provide target for posting the form data from HTML to JS page  -->
+    <!-- Account Creation Form -->
+    <div class="container" style="height: 80vh; margin-top: 6rem;">
+      <h2>Create Your Account</h2>
+      <hr>
+      <form action="#" method="POST">
+        <!-- Replace '#' with your backend endpoint -->
+        <div class="form-group">
+          <label for="fullname">Full Name:</label>
+          <input type="text" class="form-control" id="fullname" name="fullname" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address:</label>
+          <input type="email" class="form-control" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="phone">Contact Number:</label>
+          <input type="tel" class="form-control" id="phone" name="phone" required>
+        </div>
+        <div class="form-group">
+          <label for="dob">Date of Birth:</label>
+          <input type="date" class="form-control" id="dob" name="dob" required>
+        </div>
+        <div class="form-group">
+          <label for="password">Password:</label>
+          <input type="password" class="form-control" id="password" name="password" required>
+        </div>
+        <div class="form-group">
+          <label for="confirmPassword">Confirm Password:</label>
+          <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" required>
+        </div>
+        <button type="submit" class="btn btn-primary" onclick="openConfirmationPage()">Create Account</button>
+      </form>
+    </div>
+  </div>
+
+
+  <!-- footer section -->
+  <div class="footer">
+    <div class="container ">
+      <footer class="py-5">
+        <div class="row">
+          <div class="col-6 col-md-2 mb-3">
+            <h5>Section</h5>
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pricing</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
+            </ul>
+          </div>
+
+          <div class="col-6 col-md-2 mb-3">
+            <h5>Section</h5>
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pricing</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
+            </ul>
+          </div>
+
+          <div class="col-6 col-md-2 mb-3">
+            <h5>Section</h5>
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pricing</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
+            </ul>
+          </div>
+
+          <div class="col-md-5 offset-md-1 mb-3">
+            <form>
+              <h5>Subscribe to our newsletter</h5>
+              <p>Monthly digest of what's new and exciting from us.</p>
+              <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+                <input id="newsletter1" type="text" class="form-control footer-mail" placeholder="Email address">
+                <button class="btn btn-secondary" type="button">Subscribe</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+          <p>&copy; 2023 Company, Inc. All rights reserved.</p>
+          <ul class="list-unstyled d-flex">
+            <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24">
+                  <use xlink:href="bootstrap-icons.svg#twitter" /> <!-- Use the Bootstrap Icons SVG sprite and specify the icon name -->
+                </svg></a></li>
+            <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24">
+                  <use xlink:href="bootstrap-icons.svg#instagram" />
+                </svg></a></li>
+            <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24">
+                  <use xlink:href="bootstrap-icons.svg#facebook" />
+                </svg></a></li>
+          </ul>
+        </div>
+
+      </footer>
+    </div>
+  </div>
+
+
+  <!-- JS scripts here -->
+  <!-- JS for barcode -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.0/dist/JsBarcode.all.min.js"></script>
+
+  <!-- ----------------------Script for barcode generation-------------------------- -->
+  <script>
+    $(document).ready(function() {
+      // Initialize Bootstrap tooltips and popovers (if used)
+      $('[data-toggle="tooltip"]').tooltip();
+      $('[data-toggle="popover"]').popover();
+
+      // Initialize the barcode using JsBarcode
+      JsBarcode("#barcode", "1234ABCD", {
+        format: "code128",
+        lineColor: "#000",
+        width: 2,
+        height: 100,
+        displayValue: true
+      });
+    });
+  </script>
+  <script>
+    function openConfirmationPage() {
+      alert("Account Created!");
+      window.location.href = "E:\Startup\Digital doc sharing\medSite\patient\welcome.html"; // Replace with your desired URL
+    }
+  </script>
+
+
+  <script src="E:\Startup\Digital doc sharing\medSite\patient\index.js" charset="utf-8"></script>
+</body>
+
+</html>

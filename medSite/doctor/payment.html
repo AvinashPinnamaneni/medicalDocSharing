@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment - Patient Portal</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .payment-form {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 30px;
+            border: 1px solid #eee;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Patient Portal</a>
+        <!-- ... your other navbar items ... -->
+    </nav>
+
+    <div class="container mt-5">
+        <div class="payment-form">
+            <h3 class="text-center mb-4">Payment Details</h3>
+            <form action="/submit-payment" method="post"> <!-- Ensure you set the correct action endpoint -->
+                <div class="form-group">
+                    <label for="cardName">Name on Card</label>
+                    <input type="text" class="form-control" id="cardName" placeholder="John Doe" required>
+                </div>
+                <div class="form-group">
+                    <label for="cardNumber">Card Number</label>
+                    <input type="text" class="form-control" id="cardNumber" placeholder="1234 5678 1234 5678" required>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="expiryDate">Expiry Date</label>
+                        <input type="text" class="form-control" id="expiryDate" placeholder="MM/YY" required>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="cvv">CVV</label>
+                        <input type="text" class="form-control" id="cvv" placeholder="123" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="amount">Amount</label>
+                    <input type="text" class="form-control" id="amount" placeholder="50.00" readonly> <!-- Set a read-only value or fetch dynamically -->
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Make Payment</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
