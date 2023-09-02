@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile userAgent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36" version="13.9.0">
+  <diagram id="R4qT3Ytr0jc4b3V0r8O3">
+    <mxGraphModel dx="1400" dy="778" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="R4qT3Ytr0jc4b3V0r8O3-5" value="" style="group" vertex="1" connectable="0" vertexMovable="0" vertexDeletable="0" vertexSelectable="0" edgeSelectable="0" edgeMovable="0" edgeDeletable="0" edgeConnectable="0" edgeConnectableTarget="0" edgeConnectableSource="0" styleStyle="swimlane;rounded=0;whiteSpace=wrap;html=1;" strokeColor="#000000" swimlaneFillColor="#FFFFFF" strokeWidth="1" textAlign="center" verticalAlign="middle" aspect="variable" edgeStyle="orthogonalEdgeStyle" fontSize="17" fontStyle="0" fontFamily="Dialog" fontWeight="bold">
+          <mxGeometry x="10" y="10" width="1400" height="778" as="geometry" />
+        </mxCell>
+        <mxCell id="R4qT3Ytr0jc4b3V0r8O3-6" value="" style="group" vertex="1" connectable="0" vertexMovable="0" vertexDeletable="0" vertexSelectable="0" edgeSelectable="0" edgeMovable="0" edgeDeletable="0" edgeConnectable="0" edgeConnectableTarget="0" edgeConnectableSource="0" styleStyle="rounded=0;whiteSpace=wrap;html=1;" strokeColor="#000000" strokeWidth="1" textAlign="left" verticalAlign="top" aspect="fixed">
+          <mxGeometry x="10" y="10" width="200" height="200" as="geometry" />
+        </mxCell>
+        <!-- Class 1 -->
+        <mxCell id="Class1" value="Class1" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" connectable="0" vertexMovable="1" vertexDeletable="1" vertexSelectable="1" edgeSelectable="1" edgeMovable="1" edgeDeletable="1" edgeConnectable="0" edgeConnectableTarget="1" edgeConnectableSource="1" styleStyle="rounded=0;whiteSpace=wrap;html=1;" strokeWidth="1" fontSize="14" fontStyle="0" fontFamily="Dialog" fontWeight="normal">
+          <mxGeometry x="300" y="100" width="80" height="40" as="geometry" />
+        </mxCell>
+        <!-- Class 2 -->
+        <mxCell id="Class2" value="Class2" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" connectable="0" vertexMovable="1" vertexDeletable="1" vertexSelectable="1" edgeSelectable="1" edgeMovable="1" edgeDeletable="1" edgeConnectable="0" edgeConnectableTarget="1" edgeConnectableSource="1" styleStyle="rounded=0;whiteSpace=wrap;html=1;" strokeWidth="1" fontSize="14" fontStyle="0" fontFamily="Dialog" fontWeight="normal">
+          <mxGeometry x="600" y="100" width="80" height="40" as="geometry" />
+        </mxCell>
+        <!-- Association -->
+        <mxCell id="Association" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" vertexMovable="0" vertexDeletable="0" vertexSelectable="0" source="Class1" target="Class2" edgeStyle="orthogonalEdgeStyle" connectable="0" edgeConnectableTarget="1" edgeConnectableSource="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
